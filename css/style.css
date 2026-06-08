@@ -149,10 +149,6 @@ img {
 .hero-overlay-text {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   pointer-events: none;
 }
 
@@ -162,26 +158,29 @@ img {
   font-size: 32px;
   color: var(--white);
   transform: rotate(-9.81deg);
-  transform-origin: center;
+  transform-origin: top right;
   display: inline-block;
   letter-spacing: 0.12px;
   white-space: nowrap;
-  margin-bottom: -20px;
-  margin-right: -120px;
-  align-self: flex-end;
+  position: absolute;
+  top: 10px;
+  right: -10px;
 }
 
 .hero-makeover {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(64px, 10vw, 120px);
+  font-size: clamp(64px, 12vw, 118px);
   color: var(--white);
   transform: rotate(-9.68deg);
-  transform-origin: center;
+  transform-origin: top left;
   display: inline-block;
   letter-spacing: 0.12px;
   white-space: nowrap;
   line-height: 1;
+  position: absolute;
+  top: 60px;
+  left: -40px;
 }
 
 /* Paragraph */
