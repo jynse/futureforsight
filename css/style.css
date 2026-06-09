@@ -99,7 +99,7 @@ img {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-  padding: var(--space-3) var(--space-5) 0;
+  padding: var(--space-7) var(--space-5) 0;
   gap: var(--space-3);
   position: relative;
   z-index: var(--z-sticky);
