@@ -621,3 +621,111 @@ img {
     padding: var(--space-3) var(--space-5) var(--space-5);
   }
 }
+
+/* ==============================================
+   ANIMATIONS
+   ============================================== */
+
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Keyframes --- */
+
+@keyframes hero-wipe {
+  from { clip-path: inset(0 100% 0 0); opacity: 0.6; }
+  to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+}
+
+@keyframes hero-rise {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes steep-pop {
+  from { opacity: 0; transform: scale(0.55); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* --- Hero entrance (fires on page load when .js-ready is added to body) --- */
+
+.js-ready .hero-image-wrap {
+  animation: hero-rise 1s var(--ease-out-expo) both;
+  animation-delay: 0.05s;
+}
+
+.js-ready .hero-makeover {
+  animation: hero-wipe 0.85s var(--ease-out-expo) both;
+  animation-delay: 0.3s;
+}
+
+.js-ready .hero-higher-ed {
+  animation: fade-up 0.7s var(--ease-out-expo) both;
+  animation-delay: 0.55s;
+}
+
+.js-ready .hero-paragraph {
+  animation: fade-up 0.7s var(--ease-out-expo) both;
+  animation-delay: 0.75s;
+}
+
+.js-ready .hero-scroll-arrow {
+  animation: fade-up 0.6s var(--ease-out-expo) both;
+  animation-delay: 0.95s;
+}
+
+/* --- Scroll reveals: context headings --- */
+
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s var(--ease-out-expo), transform 0.65s var(--ease-out-expo);
+}
+
+.js-ready .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- STEEP letters stagger --- */
+/* Paused by default so elements stay at 'from' state until container is visible */
+
+.js-ready .steep-btn {
+  animation: steep-pop 0.55s var(--ease-out-expo) both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+  animation-play-state: paused;
+}
+
+.js-ready .steep-letters.is-visible .steep-btn {
+  animation-play-state: running;
+}
+
+/* --- Reduced motion overrides --- */
+
+@media (prefers-reduced-motion: reduce) {
+  .js-ready .hero-image-wrap,
+  .js-ready .hero-makeover,
+  .js-ready .hero-higher-ed,
+  .js-ready .hero-paragraph,
+  .js-ready .hero-scroll-arrow {
+    animation: none;
+  }
+
+  .js-ready .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .js-ready .steep-btn,
+  .js-ready .steep-letters.is-visible .steep-btn {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
