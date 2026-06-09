@@ -74,7 +74,7 @@ html {
 body {
   font-family: var(--font-body);
   color: var(--body-dark);
-  background: var(--white);
+  background: var(--off-white);
   overflow-x: hidden;
 }
 
@@ -135,7 +135,7 @@ img {
   width: 60px;
   height: 60px;
   background-color: var(--dark-navy);
-  color: var(--white);
+  color: var(--off-white);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 22px;
@@ -179,7 +179,7 @@ img {
   min-height: 400px;
   object-fit: cover;
   object-position: center top;
-  opacity: 0.53;
+  opacity: 0.65; /* students are the evidence — let them be seen */
   display: block;
 }
 
@@ -196,11 +196,11 @@ img {
 
 .hero-higher-ed {
   font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700; /* the argument, stated with conviction */
+  font-size: clamp(32px, 4vw, 48px); /* 3× paragraph — a real hierarchy jump */
   color: var(--dark-navy);
-  letter-spacing: 0.01em;
-  line-height: 1.2;
+  letter-spacing: -0.01em; /* tight at display scale */
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -209,17 +209,17 @@ img {
   grid-row: 1 / 2;
   font-family: var(--font-display);
   font-weight: 400;
-  /* Intentionally oversized — this is the design statement, not a standard heading */
+  /* Intentionally oversized — design statement, not a standard heading */
   font-size: clamp(64px, 12vw, 118px);
-  color: var(--white);
-  /*transform: rotate(-9.68deg);
-  transform-origin: top left;*/
+  color: var(--off-white);
+  transform: rotate(-9.68deg); /* restored — rotation IS the manifesto energy */
+  transform-origin: top left;
   letter-spacing: 0.01em;
   white-space: nowrap;
   line-height: 1;
   align-self: start;
   justify-self: start;
-  margin-left: -5px; /* shifted 15px right from original -20px */
+  margin-left: -5px;
 }
 
 /* Text column wrapper — right column of hero grid */
@@ -228,7 +228,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--space-5);
+  gap: var(--space-6); /* more breathing room between heading and body */
 }
 
 /* Paragraph — inside text column */
@@ -290,29 +290,31 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   /* Column gap tight, row gap generous */
-  column-gap: clamp(var(--space-6), 4vw, var(--space-8));
+  column-gap: clamp(var(--space-8), 6vw, var(--space-9));
   row-gap: var(--space-7);
 }
 
 .context-heading {
   font-family: var(--font-heading);
-  font-weight: 500;
+  font-weight: 700; /* punches — this is a manifesto, not a brochure */
   font-size: clamp(28px, 3vw, 35px);
   color: var(--white);
   line-height: 1;
-  /* Generous space below heading, clear group separation */
   margin-bottom: var(--space-5);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.07em; /* all-caps at display size needs tracking: 5–12% */
   text-wrap: balance;
 }
 
 .context-body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
-  /* Light text on dark: bump line-height */
-  line-height: 1.65;
-  color: var(--white);
+  font-size: 1rem; /* rem so user zoom works */
+  /* Light text on dark: bump line-height + add letter-spacing */
+  line-height: 1.7;
+  letter-spacing: 0.015em;
+  color: var(--off-white);
+  font-kerning: normal;
+  font-optical-sizing: auto;
   text-wrap: pretty;
 }
 
@@ -321,8 +323,13 @@ img {
 }
 
 .context-accent {
+  display: block;
+  font-size: 1.125rem; /* 18px — genuine size tier above body (16px) */
   font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
   color: var(--yellow) !important;
+  margin-bottom: var(--space-3); /* breathe before body continues */
 }
 
 .context-col--who-where {
@@ -336,7 +343,7 @@ img {
    SECTION 3 — STEEP
    ============================================== */
 .section-steep {
-  background-color: var(--white);
+  background-color: var(--off-white);
   display: flex;
   flex-direction: column;
   min-height: 600px;
@@ -398,7 +405,7 @@ img {
   font-family: var(--font-display);
   font-size: 120px;
   font-weight: 400;
-  color: var(--white);
+  color: var(--off-white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -482,7 +489,7 @@ img {
   right: var(--space-4);
   background: transparent;
   border: none;
-  color: var(--white);
+  color: var(--off-white);
   font-size: 24px;
   line-height: 1;
   cursor: pointer;
@@ -499,7 +506,7 @@ img {
 }
 
 .modal-close:focus-visible {
-  outline: 2px solid var(--white);
+  outline: 2px solid var(--off-white);
   outline-offset: 2px;
   opacity: 1;
 }
